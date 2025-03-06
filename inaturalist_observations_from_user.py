@@ -37,7 +37,7 @@ def get_inaturalist_observations(username, jwt_token, updated_since=None):
 
 
 if __name__ == "__main__":
-    username = "bananitomakande"
+    username = "iperezlorenzo"
     jwt_token = "Bearer YOUR_JWT_TOKEN"
 
     updated_since = (datetime.datetime.now() - datetime.timedelta(days=365)).isoformat()
@@ -48,5 +48,5 @@ if __name__ == "__main__":
     if deleted_observations:
         print(f"Deleted observations: {', '.join(deleted_observations)}")
 
-    for obs in observations[:5]:
+    for obs in observations:
         print(f"ID: {obs['id']}, Species: {obs.get('species_guess', 'Unknown')}, Observed On: {obs.get('observed_on', 'N/A')}")
